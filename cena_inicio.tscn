@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://brjg3psnadsow"]
+
+[ext_resource type="Texture2D" uid="uid://dccuc8d0fvcuy" path="res://Imagens/tela_inicial.png" id="1_7k3t1"]
+[ext_resource type="Script" uid="uid://cw6mbvj5s51cy" path="res://script_inicio.gd" id="1_hnhcb"]
+[ext_resource type="AudioStream" uid="uid://chjblh4xmeapa" path="res://Sons e m├║sicas/Login.wav" id="3_cd34d"]
+
+[node name="MenuInicial" type="Node2D" unique_id=626090176]
+script = ExtResource("1_hnhcb")
+
+[node name="TelaInicial" type="Sprite2D" parent="." unique_id=898392133]
+position = Vector2(575.5, 321.49997)
+scale = Vector2(0.74934906, 0.6416015)
+texture = ExtResource("1_7k3t1")
+
+[node name="ButtonIniciar" type="Button" parent="." unique_id=1015463651]
+modulate = Color(1, 1, 1, 0)
+offset_left = 384.0
+offset_top = 263.0
+offset_right = 741.0
+offset_bottom = 308.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2024298986]
+stream = ExtResource("3_cd34d")
+
+[node name="ButtonConfig" type="Button" parent="." unique_id=1349675668]
+modulate = Color(1, 1, 1, 0)
+offset_left = 384.0
+offset_top = 358.0
+offset_right = 741.0
+offset_bottom = 403.0
+
+[node name="ButtonContinuar" type="Button" parent="." unique_id=731324067]
+modulate = Color(1, 1, 1, 0)
+offset_left = 384.0
+offset_top = 313.0
+offset_right = 741.0
+offset_bottom = 358.0
+
+[node name="ButtonCreditos" type="Button" parent="." unique_id=790313760]
+modulate = Color(1, 1, 1, 0)
+offset_left = 383.0
+offset_top = 409.0
+offset_right = 740.0
+offset_bottom = 454.0
+
+[node name="ButtonSair" type="Button" parent="." unique_id=584293624]
+modulate = Color(1, 1, 1, 0)
+offset_left = 384.0
+offset_top = 462.0
+offset_right = 741.0
+offset_bottom = 507.0
+
+[connection signal="pressed" from="ButtonIniciar" to="." method="iniciar_jogo"]
+[connection signal="pressed" from="ButtonConfig" to="." method="configuracoes"]
+[connection signal="pressed" from="ButtonContinuar" to="." method="continuar_sofrendo"]
+[connection signal="pressed" from="ButtonCreditos" to="." method="creditos"]
+[connection signal="pressed" from="ButtonSair" to="." method="desistir"]

@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://dld3ecalx57m8"]
+
+[ext_resource type="Texture2D" uid="uid://0wody0bucv2r" path="res://Imagens/mapa_2_andar.png" id="1_0nwvv"]
+[ext_resource type="Script" uid="uid://cjk6ohnh30grx" path="res://script_fase2.gd" id="1_cigd3"]
+[ext_resource type="PackedScene" uid="uid://hwqqjiimyyxc" path="res://cena_zumbidesono.tscn" id="2_7c4ob"]
+[ext_resource type="Script" uid="uid://djjesslg8ryei" path="res://script_porta_escada_2.gd" id="5_7c4ob"]
+[ext_resource type="AudioStream" uid="uid://7u82hgqwwowm" path="res://Sons e m├║sicas/som_fase_2.mp3" id="6_lrxf1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r50s"]
+size = Vector2(5373, 158.51025)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxfa3"]
+size = Vector2(70, 565.12756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrxf1"]
+size = Vector2(393, 329)
+
+[node name="Fase2" type="Node2D" unique_id=1568690337]
+position = Vector2(-1, 1)
+script = ExtResource("1_cigd3")
+enemy_scene = ExtResource("2_7c4ob")
+sprite_path = NodePath("ImagemFase")
+
+[node name="ImagemFase" type="Sprite2D" parent="." unique_id=2037836540]
+position = Vector2(2993, 309)
+scale = Vector2(1.5093558, 1.3538011)
+texture = ExtResource("1_0nwvv")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1312105160]
+position = Vector2(580.58057, 464.01025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1810612076]
+position = Vector2(2051.9194, 173.24487)
+shape = SubResource("RectangleShape2D_2r50s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1335200621]
+position = Vector2(-607.58057, -184.44647)
+shape = SubResource("RectangleShape2D_dxfa3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=422299285]
+position = Vector2(3958.4194, -186.01025)
+shape = SubResource("RectangleShape2D_dxfa3")
+
+[node name="escada" type="Area2D" parent="." unique_id=1265485417]
+position = Vector2(2434, 388)
+collision_mask = 3
+script = ExtResource("5_7c4ob")
+
+[node name="UI" type="CanvasLayer" parent="escada" unique_id=1754536910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escada" unique_id=2100022874]
+position = Vector2(-3, -2)
+shape = SubResource("RectangleShape2D_lrxf1")
+debug_color = Color(0.84313726, 0.63529414, 0.63529414, 0.41960785)
+
+[node name="som_fase" type="AudioStreamPlayer" parent="." unique_id=354395150]
+stream = ExtResource("6_lrxf1")
+
+[connection signal="body_entered" from="escada" to="escada" method="_on_body_entered"]
+[connection signal="body_exited" from="escada" to="escada" method="_on_body_exited"]

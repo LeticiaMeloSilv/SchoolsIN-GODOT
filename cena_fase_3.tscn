@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://didqju0414nvj"]
+
+[ext_resource type="Script" uid="uid://b4w2hgi67j41a" path="res://script_fase3.gd" id="1_xpq0n"]
+[ext_resource type="PackedScene" uid="uid://hwqqjiimyyxc" path="res://cena_zumbidesono.tscn" id="2_e33la"]
+[ext_resource type="Texture2D" uid="uid://c6sjrc4y7pjf" path="res://Imagens/mapa_3_andar.png" id="2_xpq0n"]
+[ext_resource type="PackedScene" uid="uid://cd7kwn4q60udw" path="res://cena_xicaracafe.tscn" id="3_rck1m"]
+[ext_resource type="PackedScene" uid="uid://p57614heb600" path="res://cena_vida.tscn" id="4_ff2ty"]
+[ext_resource type="Script" uid="uid://djjesslg8ryei" path="res://script_porta_escada_2.gd" id="5_ff2ty"]
+[ext_resource type="AudioStream" uid="uid://dir2ps6dktunv" path="res://Sons e m├║sicas/som_fase_3.wav" id="7_rck1m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r50s"]
+size = Vector2(5373, 158.51025)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxfa3"]
+size = Vector2(70, 565.12756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrxf1"]
+size = Vector2(393, 329)
+
+[node name="Fase3" type="Node2D" unique_id=1568690337]
+position = Vector2(-1, 1)
+script = ExtResource("1_xpq0n")
+enemy_scene = ExtResource("2_e33la")
+xicara_scene = ExtResource("3_rck1m")
+vida_scene = ExtResource("4_ff2ty")
+sprite_path = NodePath("ImagemFase")
+
+[node name="ImagemFase" type="Sprite2D" parent="." unique_id=2037836540]
+position = Vector2(2648, 1051)
+scale = Vector2(1.5093558, 1.3538011)
+texture = ExtResource("2_xpq0n")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1312105160]
+position = Vector2(580.58057, 464.01025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1810612076]
+position = Vector2(2051.9194, 173.24487)
+shape = SubResource("RectangleShape2D_2r50s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1335200621]
+position = Vector2(-607.58057, -184.44647)
+shape = SubResource("RectangleShape2D_dxfa3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=422299285]
+position = Vector2(3958.4194, -186.01025)
+shape = SubResource("RectangleShape2D_dxfa3")
+
+[node name="escada" type="Area2D" parent="." unique_id=1265485417]
+position = Vector2(2171, 384)
+collision_mask = 3
+script = ExtResource("5_ff2ty")
+
+[node name="UI" type="CanvasLayer" parent="escada" unique_id=1754536910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escada" unique_id=2100022874]
+position = Vector2(-3, -2)
+shape = SubResource("RectangleShape2D_lrxf1")
+debug_color = Color(0.84313726, 0.63529414, 0.63529414, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=608789628]
+offset_left = -59.999756
+offset_top = -24.0
+offset_right = 4663.0
+offset_bottom = 763.0
+color = Color(0, 0, 0, 0.34117648)
+metadata/_edit_lock_ = true
+
+[node name="som_fase" type="AudioStreamPlayer" parent="." unique_id=1754576764]
+stream = ExtResource("7_rck1m")
+
+[connection signal="body_entered" from="escada" to="escada" method="_on_body_entered"]
+[connection signal="body_exited" from="escada" to="escada" method="_on_body_exited"]

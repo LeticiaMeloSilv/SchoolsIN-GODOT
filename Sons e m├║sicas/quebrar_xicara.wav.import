@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tskd026oqj76"
+path="res://.godot/imported/quebrar_xicara.wav-ba7e159540e63cbb0c859c2b1ace382b.sample"
+
+[deps]
+
+source_file="res://Sons e m├║sicas/quebrar_xicara.wav"
+dest_files=["res://.godot/imported/quebrar_xicara.wav-ba7e159540e63cbb0c859c2b1ace382b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=3
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

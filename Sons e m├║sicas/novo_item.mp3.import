@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkqknk0faqcst"
+path="res://.godot/imported/novo_item.mp3-49eb4856a0d01ad8d06ff2cd1baa500c.mp3str"
+
+[deps]
+
+source_file="res://Sons e m├║sicas/novo_item.mp3"
+dest_files=["res://.godot/imported/novo_item.mp3-49eb4856a0d01ad8d06ff2cd1baa500c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

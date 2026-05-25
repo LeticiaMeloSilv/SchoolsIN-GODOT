@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bte3dhymhuuj0"]
+
+[ext_resource type="Script" uid="uid://b0nqvl8vnltcs" path="res://script_creditos.gd" id="1_ykepg"]
+[ext_resource type="Texture2D" uid="uid://cf8f17rxtv82w" path="res://Imagens/foto_de_todos.png" id="2_l2apw"]
+
+[node name="CreditsScene" type="Control" unique_id=927868795]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ykepg")
+imagem_final = ExtResource("2_l2apw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=283071850]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=2066490148]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 434.0
+offset_top = 32.0
+offset_right = 434.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreditsText" type="RichTextLabel" parent="ScrollContainer" unique_id=1200502538]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+text = "				*****CRÉDITOS*****
+
+
+			    			-Direção-
+Letícia Melo Silva - 925111960
+
+			  				   -Arte-
+ChatGPT
+Gemini
+Manus
+
+					 	    -Música-
+Kelvin Demetrio Dos Santos Pereira - 923109986
+Envato
+
+						    -Roteiro-
+Isabeli Ayres Aragão - 925103668
+
+				 	  -Documentação-
+Thais de Aguiar Vicente - 925100177
+
+						 -Personagens-
+Kauã de Souza Benevides - 925100241
+Heitor de Oliveira Alves da Silva - 925111457
+
+			 			  -Bosses-
+Lucas Bernardes - 925109252
+Matheus Caetano de Souza - 925110653
+
+			   	-Mecânicas de Cenário-
+Letícia Melo Silva - 925111960
+
+		        	 -Suporte Geral-
+Letícia Melo Silva - 925111960
+Isabeli Ayres Aragão - 925103668
+Thais de Aguiar Vicente - 925100177
+
+		      -Agradecimentos Especiais-
+Comunidade Godot
+ChatGPT
+Manus
+
+
+
+
+
+OBRIGADO POR JOGAR!
+"
+fit_content = true
+autowrap_mode = 2
+selection_enabled = true

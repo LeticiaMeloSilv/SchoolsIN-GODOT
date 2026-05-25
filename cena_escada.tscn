@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://kobfagi2o0ed"]
+
+[ext_resource type="Script" uid="uid://b575dmsju4wlg" path="res://script_escada.gd" id="1_mc5mg"]
+[ext_resource type="Texture2D" uid="uid://pvych7jyup1b" path="res://Imagens/escada_rolante_direita.png" id="2_m4ff6"]
+[ext_resource type="Texture2D" uid="uid://cnypy0f3sku72" path="res://Imagens/escada_rolante_esquerda.png" id="3_ahngw"]
+[ext_resource type="Texture2D" uid="uid://dktiprsq47561" path="res://Imagens/borda_laranja_seleção.png" id="3_oehmv"]
+[ext_resource type="AudioStream" uid="uid://bj13nj5bvry2m" path="res://Sons e m├║sicas/escada_rolante.mp3" id="5_ahngw"]
+
+[sub_resource type="Gradient" id="Gradient_qwm5l"]
+offsets = PackedFloat32Array(0.34117648, 0.7764706)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.627451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_22jik"]
+gradient = SubResource("Gradient_qwm5l")
+
+[node name="minigame" type="Node2D" unique_id=1387767304]
+script = ExtResource("1_mc5mg")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1741958806]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=358041238]
+
+[node name="auxiliar4" type="Sprite2D" parent="." unique_id=425840454]
+position = Vector2(581, 338)
+rotation = -1.5679667
+scale = Vector2(2.7672713, 1192.004)
+texture = SubResource("GradientTexture1D_22jik")
+
+[node name="Escada3" type="Sprite2D" parent="." unique_id=498235260]
+position = Vector2(1041.0002, 492)
+rotation = -0.003623128
+scale = Vector2(0.4423828, 0.24576825)
+texture = ExtResource("2_m4ff6")
+
+[node name="Escada2" type="Sprite2D" parent="." unique_id=466005877]
+position = Vector2(811.99994, 493)
+rotation = -0.003623128
+scale = Vector2(0.4423828, 0.24576825)
+texture = ExtResource("3_ahngw")
+
+[node name="Escada1" type="Sprite2D" parent="." unique_id=1629521107]
+position = Vector2(655.5, 335)
+scale = Vector2(0.44238284, 0.5052084)
+texture = ExtResource("2_m4ff6")
+
+[node name="Escada0" type="Sprite2D" parent="." unique_id=861876570]
+position = Vector2(421.00006, 335.00003)
+scale = Vector2(0.44238284, 0.5052084)
+texture = ExtResource("3_ahngw")
+
+[node name="Borda" type="Sprite2D" parent="." unique_id=472463239]
+position = Vector2(424.9, 299.00003)
+scale = Vector2(0.73546314, 0.73525727)
+texture = ExtResource("3_oehmv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=893988758]
+stream = ExtResource("5_ahngw")
+autoplay = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

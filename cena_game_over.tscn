@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cq87c37e8l1kg"]
+
+[ext_resource type="Script" uid="uid://dfo7ygsob6g2u" path="res://script_game_over.gd" id="1_p4wjp"]
+[ext_resource type="Texture2D" uid="uid://fsnfij64yj02" path="res://Imagens/tela_game_over.png" id="1_s1hed"]
+[ext_resource type="AudioStream" uid="uid://dmf2tjwtc3mdh" path="res://Sons e m├║sicas/End Game.wav" id="3_niwnu"]
+
+[node name="Node2D" type="Node2D" unique_id=575937845]
+script = ExtResource("1_p4wjp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2071233621]
+position = Vector2(569, 320)
+scale = Vector2(0.84084296, 0.6915628)
+texture = ExtResource("1_s1hed")
+
+[node name="ButtonContinuar" type="Button" parent="Sprite2D" unique_id=939994583]
+modulate = Color(1, 1, 1, 0)
+offset_left = -324.67416
+offset_top = 117.12607
+offset_right = -151.63345
+offset_bottom = 160.57559
+scale = Vector2(3.7115643, 1.9832785)
+
+[node name="ButtonInicio" type="Button" parent="Sprite2D" unique_id=1978038745]
+modulate = Color(1, 1, 1, 0)
+offset_left = -341.3241
+offset_top = 234.25204
+offset_right = -163.52625
+offset_bottom = 277.70157
+scale = Vector2(3.766163, 1.9769325)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=917731765]
+stream = ExtResource("3_niwnu")
+autoplay = true
+
+[connection signal="pressed" from="Sprite2D/ButtonContinuar" to="." method="continuar_jogo"]
+[connection signal="pressed" from="Sprite2D/ButtonInicio" to="." method="ir_para_inicio"]

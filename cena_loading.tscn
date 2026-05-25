@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://mk6l8kfbsr6e"]
+
+[ext_resource type="Script" uid="uid://daly8j2gxotfw" path="res://script_loading.gd" id="1_in27e"]
+
+[node name="CenaLoading" type="Node2D" unique_id=997147501]
+script = ExtResource("1_in27e")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=448051961]
+offset_right = 1161.0
+offset_bottom = 665.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1967248890]
+offset_right = 1155.0
+offset_bottom = 653.0
+text = "Carregando"
+horizontal_alignment = 1
+vertical_alignment = 1

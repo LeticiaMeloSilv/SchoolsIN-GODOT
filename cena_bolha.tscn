@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://c10k10k10k10k"]
+
+[ext_resource type="Script" uid="uid://b4kqvyfdwxty3" path="res://script_bolha.gd" id="1_k10k1"]
+
+[node name="Bubble" type="Area2D" unique_id=1320512458]
+script = ExtResource("1_k10k1")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1882543497]
+offset_left = -40.0
+offset_top = 30.0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="." unique_id=744942065]
+light_mask = 2
+offset_left = -50.0
+offset_top = -25.0
+offset_right = 50.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 32
+text = "←"
+horizontal_alignment = 1
+vertical_alignment = 1

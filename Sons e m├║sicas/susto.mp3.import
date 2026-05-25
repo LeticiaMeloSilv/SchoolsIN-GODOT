@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6cctd3722p8r"
+path="res://.godot/imported/susto.mp3-fc8f9a571300dfc35414623c2609a716.mp3str"
+
+[deps]
+
+source_file="res://Sons e m├║sicas/susto.mp3"
+dest_files=["res://.godot/imported/susto.mp3-fc8f9a571300dfc35414623c2609a716.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

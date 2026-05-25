@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://131ui1ygw2vm"]
+
+[ext_resource type="Script" uid="uid://sk841uax657j" path="res://script_fase_1.gd" id="1_2hk2v"]
+[ext_resource type="Texture2D" uid="uid://c8g8u37rf7y5p" path="res://Imagens/mapa_1_andar.png" id="1_p6fei"]
+[ext_resource type="Script" uid="uid://blyxb3ucoqblo" path="res://script_catraca.gd" id="5_0mlmy"]
+[ext_resource type="Script" uid="uid://bsfxsqdpeffkf" path="res://script_porta_escada.gd" id="6_bp7yy"]
+[ext_resource type="Script" uid="uid://psaretuw15n4" path="res://script_porta_indisponivel.gd" id="7_t0ksh"]
+[ext_resource type="AudioStream" uid="uid://c3yxlocbtcueg" path="res://Sons e m├║sicas/som_fase_1.wav" id="8_74v1j"]
+[ext_resource type="PackedScene" uid="uid://dgwd67yo1nwtx" path="res://cena_npc1.tscn" id="8_anefu"]
+[ext_resource type="PackedScene" uid="uid://p57614heb600" path="res://cena_vida.tscn" id="9_3p4qh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_08fst"]
+size = Vector2(102.45764, 331)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r50s"]
+size = Vector2(4545.5, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v5pcj"]
+size = Vector2(643, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1lpk"]
+size = Vector2(827.11926, 29.72922)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_5fdea"]
+a = Vector2(19.27713, 3.7098923)
+b = Vector2(-27.620956, 14.18486)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_v5pcj"]
+a = Vector2(20.140259, 3.491661)
+b = Vector2(62.434875, 14.403091)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_2r50s"]
+a = Vector2(19.85257, 3.600769)
+b = Vector2(-11.220947, 10.802315)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bdly"]
+size = Vector2(171, 223.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4lqq5"]
+size = Vector2(393, 329)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b52ro"]
+size = Vector2(165.5, 220.5)
+
+[node name="Fase1" type="Node2D" unique_id=1568690337]
+position = Vector2(-1, 1)
+script = ExtResource("1_2hk2v")
+
+[node name="ImagemFase" type="Sprite2D" parent="." unique_id=2037836540]
+position = Vector2(2987.5806, -394.98975)
+scale = Vector2(1.5093558, 1.3538011)
+texture = ExtResource("1_p6fei")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1312105160]
+position = Vector2(580.58057, 464.01025)
+collision_mask = 0
+
+[node name="Catraca" type="CollisionShape2D" parent="StaticBody2D" unique_id=1478934024]
+position = Vector2(-344.8094, 16.489746)
+shape = SubResource("RectangleShape2D_08fst")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1810612076]
+position = Vector2(1681.25, 216)
+shape = SubResource("RectangleShape2D_2r50s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=719926276]
+position = Vector2(3636.5, 147)
+shape = SubResource("RectangleShape2D_v5pcj")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=267718912]
+position = Vector2(733, 133)
+scale = Vector2(1.8643019, -3.0273256)
+shape = SubResource("RectangleShape2D_j1lpk")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1742491658]
+position = Vector2(-104, 67)
+scale = Vector2(3.4756217, 9.1647005)
+shape = SubResource("SegmentShape2D_5fdea")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1496017]
+position = Vector2(1432, 69)
+scale = Vector2(3.4756217, 9.1647005)
+shape = SubResource("SegmentShape2D_v5pcj")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D" unique_id=1679365647]
+position = Vector2(3250.9998, 95)
+scale = Vector2(3.4756217, 9.1647005)
+shape = SubResource("SegmentShape2D_2r50s")
+
+[node name="Limite" type="CollisionShape2D" parent="StaticBody2D" unique_id=1887149675]
+position = Vector2(-629.6188, 13.979492)
+shape = SubResource("RectangleShape2D_08fst")
+
+[node name="Limite2" type="CollisionShape2D" parent="StaticBody2D" unique_id=727293638]
+position = Vector2(3993.4194, -46.010254)
+shape = SubResource("RectangleShape2D_08fst")
+
+[node name="catraca" type="Area2D" parent="." unique_id=1442598256]
+position = Vector2(236, 536)
+collision_mask = 3
+script = ExtResource("5_0mlmy")
+
+[node name="UI" type="CanvasLayer" parent="catraca" unique_id=709483157]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="catraca" unique_id=708567253]
+position = Vector2(-1.5, 0.75)
+shape = SubResource("RectangleShape2D_6bdly")
+debug_color = Color(0.84313726, 0.63529414, 0.63529414, 0.41960785)
+
+[node name="escada" type="Area2D" parent="." unique_id=2102546774]
+position = Vector2(2058, 381)
+collision_mask = 3
+script = ExtResource("6_bp7yy")
+
+[node name="UI" type="CanvasLayer" parent="escada" unique_id=1728762456]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escada" unique_id=1625855121]
+position = Vector2(-3, -2)
+shape = SubResource("RectangleShape2D_4lqq5")
+debug_color = Color(0.84313726, 0.63529414, 0.63529414, 0.41960785)
+
+[node name="professores" type="Area2D" parent="." unique_id=1046905576]
+position = Vector2(737, 375)
+collision_mask = 3
+script = ExtResource("7_t0ksh")
+
+[node name="UI" type="CanvasLayer" parent="professores" unique_id=1224180143]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="professores" unique_id=122363747]
+position = Vector2(107.25, 34.25)
+shape = SubResource("RectangleShape2D_b52ro")
+debug_color = Color(0.84313726, 0.63529414, 0.63529414, 0.41960785)
+
+[node name="Npc" parent="." unique_id=204389901 instance=ExtResource("8_anefu")]
+position = Vector2(3966, 464)
+
+[node name="Vida" parent="." unique_id=1911877330 instance=ExtResource("9_3p4qh")]
+position = Vector2(4377, 520)
+scale = Vector2(1.5093558, 1.3538011)
+
+[node name="som_fase" type="AudioStreamPlayer" parent="." unique_id=1721947247]
+stream = ExtResource("8_74v1j")
+
+[connection signal="body_entered" from="catraca" to="catraca" method="_on_body_entered"]
+[connection signal="body_exited" from="catraca" to="catraca" method="_on_body_exited"]
+[connection signal="body_entered" from="escada" to="escada" method="_on_body_entered"]
+[connection signal="body_exited" from="escada" to="escada" method="_on_body_exited"]
+[connection signal="body_entered" from="professores" to="professores" method="_on_body_entered"]
+[connection signal="body_exited" from="professores" to="professores" method="_on_body_exited"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dir2ps6dktunv"
+path="res://.godot/imported/som_fase_3.wav-f13f66c520465674fe8c6e3fc5ca0021.sample"
+
+[deps]
+
+source_file="res://Sons e m├║sicas/som_fase_3.wav"
+dest_files=["res://.godot/imported/som_fase_3.wav-f13f66c520465674fe8c6e3fc5ca0021.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

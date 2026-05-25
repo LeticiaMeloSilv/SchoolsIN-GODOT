@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cw867ogmtawvs"]
+
+[ext_resource type="Script" uid="uid://bve6vwvoaaeng" path="res://script_minigame.gd" id="1_qlca8"]
+
+[sub_resource type="Gradient" id="Gradient_qlca8"]
+offsets = PackedFloat32Array(0, 0.0037453184)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.627451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_toxdm"]
+gradient = SubResource("Gradient_qlca8")
+
+[node name="CenaMinigame" type="Node2D" unique_id=457574999]
+script = ExtResource("1_qlca8")
+
+[node name="auxiliar4" type="Sprite2D" parent="." unique_id=1707995175]
+position = Vector2(581, 338)
+rotation = -1.5679667
+scale = Vector2(2.7672713, 1192.004)
+texture = SubResource("GradientTexture1D_toxdm")

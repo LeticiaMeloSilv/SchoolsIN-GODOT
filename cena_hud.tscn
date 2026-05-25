@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b61j63o26avug"]
+
+[ext_resource type="Script" uid="uid://b484h4phun4a8" path="res://script_hud.gd" id="1_v2j14"]
+[ext_resource type="Texture2D" uid="uid://bcydqe31ad07e" path="res://Imagens/vida.png" id="2_v2j14"]
+
+[node name="HUD" type="Node2D" unique_id=514449141]
+position = Vector2(72, 65)
+script = ExtResource("1_v2j14")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=143487345]
+position = Vector2(1.5258789e-05, 24)
+scale = Vector2(0.4507042, 0.45070425)
+texture = ExtResource("2_v2j14")
+
+[node name="Label" type="Label" parent="." unique_id=955425409]
+offset_left = 66.0
+offset_top = -13.0
+offset_right = 158.17392
+offset_bottom = 59.0
+theme_override_font_sizes/font_size = 52
+text = "x 3"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bj13nj5bvry2m"
+path="res://.godot/imported/escada_rolante.mp3-be921a9fa989f5b8bd8249d020e10ab7.mp3str"
+
+[deps]
+
+source_file="res://Sons e m├║sicas/escada_rolante.mp3"
+dest_files=["res://.godot/imported/escada_rolante.mp3-be921a9fa989f5b8bd8249d020e10ab7.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

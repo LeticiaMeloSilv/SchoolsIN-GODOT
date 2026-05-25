@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmf2tjwtc3mdh"
+path="res://.godot/imported/End Game.wav-9f33aa68256150dbd687e5bbbdee182e.sample"
+
+[deps]
+
+source_file="res://Sons e m├║sicas/End Game.wav"
+dest_files=["res://.godot/imported/End Game.wav-9f33aa68256150dbd687e5bbbdee182e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

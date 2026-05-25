@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bskmf8jmi7ugu"]
+
+[ext_resource type="Script" uid="uid://ccfskuin4ykqk" path="res://script_fase4.gd" id="1_ukumj"]
+[ext_resource type="Texture2D" uid="uid://b64qkdafxltk5" path="res://Imagens/mapa_4_andar.png" id="3_4uguk"]
+[ext_resource type="Script" uid="uid://djjesslg8ryei" path="res://script_porta_escada_2.gd" id="5_tb3y5"]
+[ext_resource type="AudioStream" uid="uid://dqj4yysx7o8ns" path="res://Sons e m├║sicas/som_fase_4.wav" id="6_eooh8"]
+[ext_resource type="Script" uid="uid://psaretuw15n4" path="res://script_porta_indisponivel.gd" id="6_smewn"]
+[ext_resource type="PackedScene" uid="uid://cnektxvhdj8qy" path="res://cena_boss.tscn" id="7_eooh8"]
+[ext_resource type="PackedScene" uid="uid://cd7kwn4q60udw" path="res://cena_xicaracafe.tscn" id="7_tb3y5"]
+[ext_resource type="PackedScene" uid="uid://hwqqjiimyyxc" path="res://cena_zumbidesono.tscn" id="8_eagwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2r50s"]
+size = Vector2(5373, 158.51025)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxfa3"]
+size = Vector2(70, 565.12756)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lrxf1"]
+size = Vector2(393, 329)
+
+[node name="Fase4" type="Node2D" unique_id=1568690337]
+position = Vector2(-1, 1)
+script = ExtResource("1_ukumj")
+
+[node name="ImagemFase" type="Sprite2D" parent="." unique_id=2037836540]
+position = Vector2(1467, 1045)
+scale = Vector2(1.5093558, 1.3538011)
+texture = ExtResource("3_4uguk")
+metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1312105160]
+position = Vector2(580.58057, 464.01025)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1810612076]
+position = Vector2(2051.9194, 173.24487)
+shape = SubResource("RectangleShape2D_2r50s")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1335200621]
+position = Vector2(-607.58057, -184.44647)
+shape = SubResource("RectangleShape2D_dxfa3")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=422299285]
+position = Vector2(3846.4194, -189.01025)
+shape = SubResource("RectangleShape2D_dxfa3")
+
+[node name="escada" type="Area2D" parent="." unique_id=1265485417]
+position = Vector2(993, 406)
+collision_mask = 3
+script = ExtResource("5_tb3y5")
+
+[node name="UI" type="CanvasLayer" parent="escada" unique_id=1754536910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escada" unique_id=2100022874]
+position = Vector2(-3, -2)
+shape = SubResource("RectangleShape2D_lrxf1")
+debug_color = Color(0.84313726, 0.63529414, 0.63529414, 0.41960785)
+
+[node name="teia" type="Area2D" parent="." unique_id=1533479674]
+position = Vector2(189, 406)
+scale = Vector2(0.4399997, 1)
+collision_mask = 3
+script = ExtResource("6_smewn")
+
+[node name="UI" type="CanvasLayer" parent="teia" unique_id=45747628]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="teia" unique_id=2039819635]
+position = Vector2(-236.3638, 0)
+shape = SubResource("RectangleShape2D_lrxf1")
+debug_color = Color(0.84313726, 0.63529414, 0.63529414, 0.41960785)
+
+[node name="Boss" parent="." unique_id=476113856 instance=ExtResource("7_eooh8")]
+position = Vector2(4071, 388)
+scale = Vector2(-1.3876557, 1.3688527)
+
+[node name="som_fase" type="AudioStreamPlayer" parent="." unique_id=789396103]
+stream = ExtResource("6_eooh8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1587985560]
+offset_left = -35.0
+offset_top = -36.0
+offset_right = 4688.0
+offset_bottom = 751.0
+color = Color(0, 0, 0, 0.34117648)
+metadata/_edit_lock_ = true
+
+[node name="xicaracafe" parent="." unique_id=65200856 instance=ExtResource("7_tb3y5")]
+position = Vector2(269.99997, 457.99997)
+
+[node name="Zumbidesono" parent="." unique_id=1134354081 instance=ExtResource("8_eagwo")]
+position = Vector2(1945, 408)
+
+[connection signal="body_entered" from="escada" to="escada" method="_on_body_entered"]
+[connection signal="body_exited" from="escada" to="escada" method="_on_body_exited"]
+[connection signal="body_entered" from="teia" to="teia" method="_on_body_entered"]
+[connection signal="body_exited" from="teia" to="teia" method="_on_body_exited"]

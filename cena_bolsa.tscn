@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dfr4o74hrmloy"]
+
+[ext_resource type="Script" uid="uid://qs8tayatco0c" path="res://script_bolsa.gd" id="1_qwm5l"]
+[ext_resource type="Texture2D" uid="uid://nm6i5n4l464a" path="res://Imagens/bolsa.png" id="2_22jik"]
+
+[sub_resource type="Gradient" id="Gradient_b5gm0"]
+offsets = PackedFloat32Array(0.8113208, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_k6q26"]
+gradient = SubResource("Gradient_b5gm0")
+
+[sub_resource type="Gradient" id="Gradient_qwm5l"]
+offsets = PackedFloat32Array(0.8113208, 1)
+colors = PackedColorArray(0, 0, 0, 0.627451, 0, 0, 0, 0.627451)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_22jik"]
+gradient = SubResource("Gradient_qwm5l")
+
+[node name="minigame" type="Node2D" unique_id=1387767304]
+script = ExtResource("1_qwm5l")
+
+[node name="bolsa" type="Sprite2D" parent="." unique_id=1350319198]
+position = Vector2(604.00006, 323.49994)
+scale = Vector2(0.9238282, 0.805664)
+texture = ExtResource("2_22jik")
+
+[node name="auxiliar1" type="Sprite2D" parent="." unique_id=1180814976]
+position = Vector2(66.875, 350.00003)
+scale = Vector2(0.6572265, 742.4376)
+texture = SubResource("GradientTexture1D_k6q26")
+
+[node name="auxiliar2" type="Sprite2D" parent="." unique_id=1882998750]
+position = Vector2(1170.0001, 333)
+scale = Vector2(0.99202347, 783)
+texture = SubResource("GradientTexture1D_k6q26")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1741958806]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=358041238]
+
+[node name="auxiliar4" type="Sprite2D" parent="." unique_id=425840454]
+position = Vector2(590.875, 350.00003)
+scale = Vector2(4.7509766, 742.4376)
+texture = SubResource("GradientTexture1D_22jik")
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
